@@ -2,6 +2,9 @@
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
 
+;set up the load-paths and autoloads for installed packages
+(package-initialize)
+
 ;the following adds ":/usr/texbin" to my PATH
 (setenv "PATH" (concat (getenv "PATH") ":/usr/texbin"))
 (setq exec-path (append exec-path '("/usr/texbin")))
