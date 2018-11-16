@@ -41,7 +41,8 @@
  '(TeX-electric-escape nil)
  '(TeX-electric-sub-and-superscript t)
  '(TeX-insert-braces nil)
- '(TeX-newline-function (quote reindent-then-newline-and-indent)))
+ '(TeX-newline-function (quote reindent-then-newline-and-indent))
+ '(package-selected-packages (quote (helm-gtags helm ggtags elpy auctex-latexmk))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
