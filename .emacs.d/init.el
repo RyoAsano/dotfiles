@@ -19,7 +19,7 @@
 
 
 ;this lets emacs recognize the path described below.
-(add-to-list 'load-path "~/lisp")
+(add-to-list 'load-path "/Users/Owner/dotfiles/.emacs.d/lisp")
 
 
 (add-hook 'LaTeX-mode-hook
@@ -42,7 +42,9 @@
  '(TeX-electric-sub-and-superscript t)
  '(TeX-insert-braces nil)
  '(TeX-newline-function (quote reindent-then-newline-and-indent))
- '(package-selected-packages (quote (helm-gtags helm ggtags elpy auctex-latexmk))))
+ '(package-selected-packages
+   (quote
+    (smartparens irony company-c-headers company sr-speedbar helm-gtags helm ggtags elpy auctex-latexmk))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -136,3 +138,70 @@
 
 ;;This line negates the default welcome screen from appearing on startup.
 (setq inhibit-startup-screen t)
+
+
+
+
+					;-----------------------setup for helm and helm-gtags---------------------------
+(setq
+ helm-gtags-ignore-case t
+ helm-gtags-auto-update t
+ helm-gtags-use-input-at-cursor t
+ helm-gtags-pulse-at-cursor t
+ helm-gtags-prefix-key "\C-cg"
+ helm-gtags-suggested-key-mapping t
+ )
+
+(require 'helm-gtags)
+;; Enable helm-gtags-mode
+(add-hook 'dired-mode-hook 'helm-gtags-mode)
+(add-hook 'eshell-mode-hook 'helm-gtags-mode)
+(add-hook 'c-mode-hook 'helm-gtags-mode)
+(add-hook 'c++-mode-hook 'helm-gtags-mode)
+(add-hook 'asm-mode-hook 'helm-gtags-mode)
+
+(define-key helm-gtags-mode-map (kbd "C-c g a") 'helm-gtags-tags-in-this-function)
+(define-key helm-gtags-mode-map (kbd "C-j") 'helm-gtags-select)
+(define-key helm-gtags-mode-map (kbd "M-.") 'helm-gtags-dwim)
+(define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)
+(define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
+(define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
+					;-----------------------setup for helm and helm-gtags---------------------------
+
+;;Sets company for auto completion.
+(require 'cc-mode) 
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
+
+(setq company-backends (delete 'company-semantic company-backends))
+(define-key c-mode-map  [(tab)] 'company-complete)
+(define-key c++-mode-map  [(tab)] 'company-complete)
+
+
+;;Set company-c-headers
+(add-to-list 'company-backends 'company-c-headers)
+
+
+;;CEBET
+(load-file (concat user-emacs-directory "cedet/cedet-devel-load.el"))
+(load-file (concat user-emacs-directory "cedet/contrib/cedet-contrib-load.el"))
+
+;;semantic
+(require 'semantic)
+
+(global-semanticdb-minor-mode 1)
+(global-semantic-idle-scheduler-mode 1)
+
+(semantic-mode 1)
+
+;;smartparens
+(require 'smartparens-config)
+(show-smartparens-global-mode +1)
+(smartparens-global-mode 1)
+
+;; when you press RET, the curly braces automatically
+;; add another newline
+(sp-with-modes '(c-mode c++-mode)
+  (sp-local-pair "{" nil :post-handlers '(("||\n[i]" "RET")))
+  (sp-local-pair "/*" "*/" :post-handlers '((" | " "SPC")
+                                            ("* ||\n[i]" "RET"))))
