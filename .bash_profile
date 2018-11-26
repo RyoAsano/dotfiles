@@ -11,8 +11,7 @@ export PATH
 # added by Anaconda3 4.3.1 installer
 export PATH="/Users/Owner/anaconda/bin:$PATH"
 
-# added by Anaconda3 4.3.1 installer
-export PATH="/Users/Owner/anaconda/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
 
 source ~/.bashrc
 
