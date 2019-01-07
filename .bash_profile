@@ -13,5 +13,17 @@ export PATH="/Users/Owner/anaconda/bin:$PATH"
 
 export PATH="/usr/local/bin:$PATH"
 
+# for llvm setting
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/llvm/lib"
+export CPPFLAGS="-I/usr/local/opt/llvm/include"
+
+export GTEST_ROOT=~/googletest
+export GTEST_INCLUDEDIR=$GTEST_ROOT/googletest/include
+export GMOCK_INCLUDEDIR=$GTEST_ROOT/googlemock/include
+export GMOCK_LIBDIR=$GTEST_ROOT/mybuild/lib
+export GTEST_LIBDIR=$GTEST_ROOT/mybuild/lib
+
+
 source ~/.bashrc
 
