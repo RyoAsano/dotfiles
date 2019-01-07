@@ -13,6 +13,7 @@ Plugin 'VundleVim/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
+Plugin 'Valloric/YouCompleteMe.git'
 Plugin 'tpope/vim-fugitive'
 Plugin 'cohama/lexima.vim'
 " plugin from http://vim-scripts.org/vim/scripts.html
