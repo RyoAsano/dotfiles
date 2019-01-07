@@ -7,4 +7,5 @@ ln -sf ~/dotfiles/.conda ~/.conda
 ln -sf ~/dotfiles/.jupyter ~/.jupyter
 ln -sf ~/dotfiles/.latexmkrc ~/.latexmkrc
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
+ln -sf ~/dotfiles/.vim ~/.vim
 
