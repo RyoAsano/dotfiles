@@ -44,3 +44,31 @@ set clipboard=unnamed
 
 set backspace=2 " make backspace work like most other programs
 
+
+"the following setup comes from this wiki page:
+"http://vim.wikia.com/wiki/Example_vimrc
+filetype indent plugin on
+syntax on
+set hidden
+set wildmenu
+set showcmd
+set hlsearch
+set ignorecase
+set smartcase
+set backspace=indent,eol,start
+set autoindent
+set nostartofline
+set visualbell
+set laststatus=2
+set confirm
+set t_vb=
+set mouse=a
+set cmdheight=2
+set number
+set notimeout ttimeout ttimeoutlen=200
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+map Y y$
+nnoremap <C-L> :nohl<CR><C-L>
+imap jj <Esc>
