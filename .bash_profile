@@ -19,5 +19,6 @@ export GMOCK_INCLUDEDIR=$GTEST_ROOT/googlemock/include
 export GMOCK_LIBDIR=$GTEST_ROOT/mybuild/lib
 export GTEST_LIBDIR=$GTEST_ROOT/mybuild/lib
 
+git config --global core.editor vi
 source ~/.bashrc
 
