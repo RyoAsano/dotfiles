@@ -72,3 +72,5 @@ set expandtab
 map Y y$
 nnoremap <C-L> :nohl<CR><C-L>
 imap jj <Esc>
+
+let g:ycm_autoclose_preview_window_after_insertion = 1
