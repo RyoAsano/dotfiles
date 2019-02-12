@@ -89,6 +89,9 @@ let maplocalleader="\<space>"
 
 let g:tex_flavor = 'latex'
 
+set rtp+=~
+let g:UltiSnipsSnippetsDir = $HOME.'/.mysnippets'
+let g:UltiSnipsSnippetDirectories = [".mysnippets", "UltiSnips"]
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
