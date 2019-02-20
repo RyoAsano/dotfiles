@@ -19,6 +19,7 @@ Plugin 'cohama/lexima.vim'
 Plugin 'lervag/vimtex'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'andymass/vim-matchup'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -118,3 +119,4 @@ let g:vimtex_compiler_latexmk = {
 let g:vimtex_view_general_viewer
       \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
 let g:vimtex_view_general_options = '-r @line @pdf @tex'
+let g:matchup_override_vimtex = 1
