@@ -3,7 +3,7 @@
 
 #export PS1="\t \W\n"
 #Here, \e[44;0;33m is specifier for background color, bold or normal or underlined text, foreground color.
-export PS1="\e[;0;36m[\t \u@\H \w]\e[m\n"
+export PS1="\e[;0;31m[\t \u@\H \w]\e[m\n"
 #enable CLI to use color
 export CLICOLOR=1
 #set color mapping (go on web for which maps to which)
