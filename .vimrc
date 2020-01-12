@@ -120,3 +120,11 @@ let g:vimtex_view_general_viewer
       \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
 let g:vimtex_view_general_options = '-r @line @pdf @tex'
 let g:matchup_override_vimtex = 1
+let g:vimtex_quickfix_latexlog = {
+            \ 'overfull' : 0,
+            \ 'underfull' : 0,
+            \ 'packages' : {
+            \   'default' : 0,
+            \ },
+            \ 'font' : 0,
+            \}
