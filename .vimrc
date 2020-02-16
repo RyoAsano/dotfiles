@@ -133,3 +133,13 @@ let g:vimtex_quickfix_latexlog = {
             \ },
             \ 'font' : 0,
             \}
+
+" This is the setting for python auto-completion by YCM.
+let g:ycm_python_interpreter_path = ''
+let g:ycm_python_sys_path = []
+let g:ycm_extra_conf_vim_data = [
+  \  'g:ycm_python_interpreter_path',
+  \  'g:ycm_python_sys_path'
+  \]
+let g:ycm_global_ycm_extra_conf = '~/.ycm_global_extra_conf.py'
+
