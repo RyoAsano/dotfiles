@@ -1,1 +1,0 @@
-Owner@asano-no-MacBook-Air.local.637
